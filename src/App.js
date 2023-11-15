@@ -79,7 +79,11 @@ function Calculator() {
   return (
     <MainContainer>
       <MenuContainer>
-        <SpeechRecognitionComponent setCalc={setCalc} getResult={getResult} />
+        <SpeechRecognitionComponent
+          calc={calc}
+          setCalc={setCalc}
+          getResult={getResult}
+        />
         <HistoryToggleComponent
           showHistory={showHistory}
           setShowHistory={setShowHistory}
