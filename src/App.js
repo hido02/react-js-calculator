@@ -9,19 +9,16 @@ import KeyboardComponent from "./KeyboardComponent";
 import HistoryToggleComponent from "./HistoryToggleComponent";
 
 function Calculator() {
-  // HistoryContainer 표시 여부를 제어하는 state
-  const [showHistory, setShowHistory] = useState(false);
-
-  const toggleHistory = () => {
-    setShowHistory(!showHistory);
-  };
-
   const [calc, setCalc] = useState("");
-
-  const [operCheck, setOperCheck] = useState(true);
 
   // 계산 기록을 저장할 state 추가
   const [history, setHistory] = useState([]);
+  // HistoryContainer 표시 여부를 제어하는 state
+  const [showHistory, setShowHistory] = useState(false);
+
+  const [pointCheck, setPointCheck] = useState(true);
+
+  const [operCheck, setOperCheck] = useState(true);
 
   const allClear = () => {
     setPointCheck(true);
@@ -34,8 +31,6 @@ function Calculator() {
     let str = String(calc).slice(0, -1);
     setCalc((prev) => str);
   };
-
-  const [pointCheck, setPointCheck] = useState(true);
 
   // 기존 코드
   // const getResult = () => {
