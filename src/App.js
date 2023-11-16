@@ -55,19 +55,21 @@ function Calculator() {
   // 해결
   // 입력한 값이 0으로 시작하는 경우 10진수로 변환하는 로직 추가
 
+  // =을 클릭했을 때 getResult
+  // 음성 인식했을 때 =이라면 다른 getResult?
+
   const getResult = () => {
     let replace_str = calc
       .replace(/×/g, "*")
       .replace(/÷/g, "/")
       .replace(/\b0+(?![.])/g, ""); // 0으로 시작하는 숫자에서 선행 0 제거
-    // 0으로 시작하는 숫자가 10진수로 처리되도록
 
     try {
       let result = Function('"use strict"; return (' + replace_str + ")")();
       if (!isNaN(result) && result !== Infinity) {
         // 계산 결과 업데이트와 동시에 계산 기록 추가
         setCalc(String(result));
-        setHistory([...history, `${calc} = ${result}`]); // 계산 수식과 결과를 history에 추가
+        setHistory([...history, `${calc} = ${result}`]);
       }
       // ...기존 오류 처리 로직
     } catch (e) {
@@ -83,6 +85,8 @@ function Calculator() {
           calc={calc}
           setCalc={setCalc}
           getResult={getResult}
+          history={history}
+          setHistory={setHistory}
         />
         <HistoryToggleComponent
           showHistory={showHistory}

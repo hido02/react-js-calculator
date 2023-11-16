@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Typography from "@mui/material/Typography";
 
 const HistoryPanel = ({ history, setHistory }) => {
   const handleDeleteHistory = (index) => {
@@ -9,6 +10,7 @@ const HistoryPanel = ({ history, setHistory }) => {
 
   return (
     <HistoryContainer>
+      <Typography>계산 기록</Typography>
       {history.map((record, index) => (
         <HistoryEntry key={index}>
           <HistoryItem>{record}</HistoryItem>
