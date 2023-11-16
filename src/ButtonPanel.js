@@ -6,8 +6,6 @@ const ButtonPanel = ({
   setCalc,
   operCheck,
   setOperCheck,
-  setHistory,
-  history,
   allClear,
   delCalc,
   getResult,

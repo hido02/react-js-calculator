@@ -25,7 +25,6 @@ const HistoryPanel = ({ history, setHistory }) => {
 
 export default HistoryPanel;
 
-// HistoryContainer, HistoryEntry, HistoryItem 스타일링을 여기에 추가
 const HistoryContainer = styled.div`
   width: 40%;
   max-width: 450px;
@@ -40,7 +39,7 @@ const HistoryEntry = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px; // 각 항목 사이의 간격
+  margin-bottom: 10px;
 `;
 
 const HistoryItem = styled.div`
